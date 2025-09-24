@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>idealdish.rec - Create your recipe</title>
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Story+Script&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      background: #84994F;
+      color: #333;
+      min-height: 100vh;
+    }
+    
+    nav {
+      color: #fff;
+      font-size: 2rem;
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    nav h2 {
+      font-family: "Story Script", sans-serif;
+    }
+    
+    nav a {
+      color: #EFF5D2;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 8px 16px;
+      border: 2px solid #EFF5D2;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+    
+    nav a:hover {
+      background: #EFF5D2;
+      color: #84994F;
+    }
+    
+    hr {
+      border: 0;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.2);
+      margin: 0 30px;
+    }
+    
+    .divicon {
+      display: flex;
+      justify-content: center;
+      padding: 15px 0;
+      background: rgba(0, 0, 0, 0.1);
+    }
+    
+    .btn {
+      background: transparent;
+      border: none;
+      margin: 0 10px;
+    }
+    
+    .btn i {
+      font-size: 2rem;
+      color: #EFF5D2;
+      transition: all 0.3s ease;
+    }
+    
+    .btn i:hover {
+      color: #fff;
+      transform: translateY(-3px);
+    }
+    
+    .container {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    
+    .page-title {
+      text-align: center;
+      color: #EFF5D2;
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    
+    .recipe-form {
+      background: #EFF5D2;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+    
+    .form-section {
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid #d8e2a9;
+    }
+    
+    .section-title {
+      font-family: "Bebas Neue", sans-serif;
+      color: #5a6e37;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #5a6e37;
+    }
+    
+    .form-control {
+      width: 100%;
+      padding: 12px 15px;
+      border: 2px solid #d8e2a9;
+      border-radius: 8px;
+      font-size: 1rem;
+      background: #f9fbeb;
+      transition: border 0.3s ease;
+    }
+    
+    .form-control:focus {
+      border-color: #84994F;
+      outline: none;
+    }
+    
+    textarea.form-control {
+      min-height: 100px;
+      resize: vertical;
+    }
+    
+    .ingredient-row, .instruction-row {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 15px;
+      align-items: center;
+    }
+    
+    .ingredient-input, .instruction-input {
+      flex: 1;
+    }
+    
+    .remove-btn {
+      background: #ff6b6b;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s ease;
+    }
+    
+    .remove-btn:hover {
+      background: #ee5253;
+    }
+    
+    .add-btn {
+      background: #5a6e37;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 15px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: background 0.3s ease;
+    }
+    
+    .add-btn:hover {
+      background: #49592d;
+    }
+    
+    .add-btn i {
+      font-size: 1.2rem;
+    }
+    
+    .submit-btn {
+      background: #84994F;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: block;
+      margin: 30px auto 0;
+      transition: background 0.3s ease;
+      width: 200px;
+    }
+    
+    .submit-btn:hover {
+      background: #5a6e37;
+    }
+    
+    .image-preview {
+      width: 100%;
+      max-width: 300px;
+      height: 200px;
+      border: 2px dashed #d8e2a9;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 15px;
+      overflow: hidden;
+    }
+    
+    .image-preview img {
+      max-width: 100%;
+      max-height: 100%;
+      display: none;
+    }
+    
+    .image-preview p {
+      color: #a1b57d;
+    }
+    
+    @media (max-width: 768px) {
+      .ingredient-row, .instruction-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+      }
+      
+      .remove-btn {
+        align-self: flex-end;
+      }
+      
+      .recipe-form {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <h2>IdealDIsh.</h2>
+    <a href="home.html">Back to Home</a>
+  </nav>
+  <hr>
+  <div class="divicon">
+    <button class="btn">
+      <a href="home.html"><i class='bx bxs-home'></i></a>
+    </button>
+    <button class="btn">
+      <a href="#"><i class='bx bxs-dish'></i></a>
+    </button>
+    <button class="btn">
+      <a href="#"><i class='bx bxs-book'></i></a>
+    </button>
+    <button class="btn">
+      <a href="#"><i class='bx bxs-phone'></i></a>
+    </button>
+  </div>
+
+  <div class="container">
+    <h1 class="page-title">Create Your Recipe</h1>
+    
+    <form class="recipe-form" id="recipeForm">
+      <div class="form-section">
+        <h2 class="section-title">Basic Information</h2>
+        
+        <div class="form-group">
+          <label for="recipeTitle">Recipe Title</label>
+          <input type="text" id="recipeTitle" class="form-control" placeholder="e.g., Creamy Garlic Pasta" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="recipeDescription">Description</label>
+          <textarea id="recipeDescription" class="form-control" placeholder="Describe your recipe..." required></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label for="recipeImage">Recipe Image</label>
+          <input type="file" id="recipeImage" class="form-control" accept="image/*">
+          <div class="image-preview">
+            <img id="previewImage" src="" alt="Preview">
+            <p id="previewText">Image preview will appear here</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-section">
+        <h2 class="section-title">Ingredients</h2>
+        <div id="ingredientsContainer">
+          <div class="ingredient-row">
+            <input type="text" class="form-control ingredient-input" placeholder="e.g., 2 cups flour">
+            <button type="button" class="remove-btn" style="display: none;">×</button>
+          </div>
+        </div>
+        <button type="button" class="add-btn" id="addIngredient">
+          <i class='bx bx-plus'></i> Add Ingredient
+        </button>
+      </div>
+      
+      <div class="form-section">
+        <h2 class="section-title">Instructions</h2>
+        <div id="instructionsContainer">
+          <div class="instruction-row">
+            <textarea class="form-control instruction-input" placeholder="Describe step 1..."></textarea>
+            <button type="button" class="remove-btn" style="display: none;">×</button>
+          </div>
+        </div>
+        <button type="button" class="add-btn" id="addInstruction">
+          <i class='bx bx-plus'></i> Add Step
+        </button>
+      </div>
+      
+      <div class="form-section">
+        <h2 class="section-title">Additional Information</h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+          <div class="form-group">
+            <label for="prepTime">Prep Time (minutes)</label>
+            <input type="number" id="prepTime" class="form-control" min="0">
+          </div>
+          
+          <div class="form-group">
+            <label for="cookTime">Cook Time (minutes)</label>
+            <input type="number" id="cookTime" class="form-control" min="0">
+          </div>
+          
+          <div class="form-group">
+            <label for="servings">Servings</label>
+            <input type="number" id="servings" class="form-control" min="1">
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="recipeNotes">Notes/Tips</label>
+          <textarea id="recipeNotes" class="form-control" placeholder="Any additional notes or tips..."></textarea>
+        </div>
+      </div>
+      
+      <button type="submit" class="submit-btn">Save Recipe</button>
+    </form>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Image preview functionality
+      const recipeImage = document.getElementById('recipeImage');
+      const previewImage = document.getElementById('previewImage');
+      const previewText = document.getElementById('previewText');
+      
+      recipeImage.addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function(e) {
+            previewImage.src = e.target.result;
+            previewImage.style.display = 'block';
+            previewText.style.display = 'none';
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+      
+      // Add ingredient field
+      const addIngredientBtn = document.getElementById('addIngredient');
+      const ingredientsContainer = document.getElementById('ingredientsContainer');
+      
+      addIngredientBtn.addEventListener('click', function() {
+        const ingredientRow = document.createElement('div');
+        ingredientRow.className = 'ingredient-row';
+        ingredientRow.innerHTML = `
+          <input type="text" class="form-control ingredient-input" placeholder="e.g., 2 cups flour">
+          <button type="button" class="remove-btn">×</button>
+        `;
+        ingredientsContainer.appendChild(ingredientRow);
+        
+        // Add remove functionality
+        const removeBtn = ingredientRow.querySelector('.remove-btn');
+        removeBtn.addEventListener('click', function() {
+          ingredientRow.remove();
+        });
+      });
+      
+      // Add instruction field
+      const addInstructionBtn = document.getElementById('addInstruction');
+      const instructionsContainer = document.getElementById('instructionsContainer');
+      
+      addInstructionBtn.addEventListener('click', function() {
+        const instructionRow = document.createElement('div');
+        instructionRow.className = 'instruction-row';
+        instructionRow.innerHTML = `
+          <textarea class="form-control instruction-input" placeholder="Describe step..."></textarea>
+          <button type="button" class="remove-btn">×</button>
+        `;
+        instructionsContainer.appendChild(instructionRow);
+        
+        // Add remove functionality
+        const removeBtn = instructionRow.querySelector('.remove-btn');
+        removeBtn.addEventListener('click', function() {
+          instructionRow.remove();
+        });
+      });
+      
+      // Form submission
+      const recipeForm = document.getElementById('recipeForm');
+      recipeForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Recipe saved successfully!');
+        // In a real application, you would process the form data here
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IdealDIsh - Register</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Story+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Regiter.css">
+</head>
+<body>
+  <form action="Login.html" method="post">
+  <nav>
+    <h2>IdealDIsh.</h2>
+    <a href="login.html">Login</a>
+  </nav>
+  <hr>
+  <div class="divicon">
+    <button class="btn">
+      <i class='bx bxs-home'></i>
+    </button>
+    <button class="btn">
+      <i class='bx bxs-dish'></i>
+    </button>
+    <button class="btn">
+      <i class='bx bxs-book'></i>
+    </button>
+    <button class="btn">
+      <i class='bx bxs-phone'></i>
+    </button>
+  </div>
+
+  <div class="container">
+    <div class="register-card">
+      <div class="card-header">
+        <h1>IdealDIsh</h1>
+        <p>Create a new account</p>
+      </div>
+      
+      <div class="card-body">
+        <form>
+          <div class="input-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" class="input-box" placeholder="Enter your full name" required>
+          </div>
+          
+          <div class="input-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" class="input-box" placeholder="Enter your email" required>
+          </div>
+          
+          <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" class="input-box" placeholder="Create a password" required>
+          </div>
+          
+          <div class="input-group">
+            <label for="confirm-password">Confirm Password</label>
+            <input type="password" id="confirm-password" class="input-box" placeholder="Confirm your password" required>
+          </div>
+      
+          <button type="submit" class="btn-register">Create Account</button>
+          
+          <div class="footer">
+            <p>Already have an account? <a href="login.html">Login here</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  </form>
+</body>
+</html>

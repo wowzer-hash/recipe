@@ -1,0 +1,229 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      background: #84994F;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    
+    nav {
+      color: #fff;
+      font-size: 2rem;
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    nav h2 {
+      font-family: "Story Script", sans-serif;
+    }
+    
+    nav a {
+      color: #EFF5D2;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 8px 16px;
+      border: 2px solid #EFF5D2;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+    
+    nav a:hover {
+      background: #EFF5D2;
+      color: #84994F;
+    }
+    
+    hr {
+      border: 0;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.2);
+      margin: 0 30px;
+    }
+    
+    .divicon {
+      display: flex;
+      justify-content: center;
+      padding: 15px 0;
+      background: rgba(0, 0, 0, 0.1);
+    }
+    
+    .btn {
+      background: transparent;
+      border: none;
+      margin: 0 10px;
+    }
+    
+    .btn i {
+      font-size: 2rem;
+      color: #EFF5D2;
+    }
+    
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-grow: 1;
+      padding: 30px;
+    }
+    
+    .login-card {
+      background: #EFF5D2;
+      width: 100%;
+      max-width: 450px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+    }
+    
+    .card-header {
+      background: #5a6e37;
+      padding: 25px 30px;
+      text-align: center;
+      color: #EFF5D2;
+    }
+    
+    .card-header h1 {
+      font-family: "Story Script", sans-serif;
+      font-size: 2.8rem;
+      margin-bottom: 5px;
+    }
+    
+    .card-header p {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+    
+    .card-body {
+      padding: 25px 30px;
+    }
+    
+    .input-group {
+      margin-bottom: 20px;
+    }
+    
+    .input-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: #5a6e37;
+    }
+    
+    .input-box {
+      width: 100%;
+      padding: 14px;
+      border: 2px solid #d8e2a9;
+      border-radius: 8px;
+      font-size: 1rem;
+      background: #f9fbeb;
+      transition: border 0.3s ease;
+    }
+    
+    .input-box:focus {
+      border-color: #84994F;
+      outline: none;
+    }
+    
+    .btn-login {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      background: #84994F;
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      margin-top: 10px;
+    }
+    
+    .btn-login:hover {
+      background: #5a6e37;
+    }
+    
+    .separator {
+      display: flex;
+      align-items: center;
+      margin: 25px 0;
+      color: #5a6e37;
+    }
+    
+    .separator::before,
+    .separator::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #d8e2a9;
+    }
+    
+    .separator span {
+      padding: 0 15px;
+      font-size: 0.9rem;
+    }
+    
+    .social-login {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+    
+    .social-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f9fbeb;
+      border: 2px solid #d8e2a9;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .social-icon:hover {
+      background: #e4ebb3;
+    }
+    
+    .social-icon i {
+      font-size: 1.5rem;
+      color: #5a6e37;
+    }
+    
+    .footer {
+      text-align: center;
+      margin-top: 20px;
+      color: #5a6e37;
+    }
+    
+    .footer a {
+      color: #84994F;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    
+    @media (max-width: 500px) {
+      .login-card {
+        border-radius: 8px;
+      }
+      
+      .card-header {
+        padding: 20px;
+      }
+      
+      .card-body {
+        padding: 20px;
+      }
+    }

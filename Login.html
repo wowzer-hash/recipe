@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IdealDIsh - Login</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Story+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Login.css">
+</head>
+<body>
+  <form action="Main.html" method="post">
+  <nav>
+    <h2>IdealDIsh.</h2>
+    <a href="register.html">Create Account</a>
+  </nav>
+  <hr>
+  <div class="divicon">
+    <button class="btn">
+      <i class='bx bxs-home'></i>
+    </button>
+    <button class="btn">
+      <i class='bx bxs-dish'></i>
+    </button>
+    <button class="btn">
+      <i class='bx bxs-book'></i>
+    </button>
+    <button class="btn">
+      <i class='bx bxs-phone'></i>
+    </button>
+  </div>
+
+  <div class="container">
+    <div class="login-card">
+      <div class="card-header">
+        <h1>IdealDIsh</h1>
+        <p>Sign in to access your recipes</p>
+      </div>
+      
+      <div class="card-body">
+        <form>
+          <div class="input-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" class="input-box" placeholder="Enter your email" required>
+          </div>
+          
+          <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" class="input-box" placeholder="Enter your password" required>
+          </div>
+          
+          <a href="Main.html"><button type="submit" class="btn-login">Login</button></a>
+          
+          <div class="separator">
+            <span>Or continue with</span>
+          </div>
+          
+          <div class="social-login">
+            <div class="social-icon">
+              <i class='bx bxl-google'></i>
+            </div>
+            <div class="social-icon">
+              <i class='bx bxl-facebook'></i>
+            </div>
+            <div class="social-icon">
+              <i class='bx bxl-twitter'></i>
+            </div>
+          </div>
+          
+          <div class="footer">
+            <p>Don't have an account? <a href="register.html">Register now</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  </form>
+</body>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyD125ofBP8A1UlDizIt1m3qQde5mhURwXc",
+    authDomain: "login-87c09.firebaseapp.com",
+    projectId: "login-87c09",
+    storageBucket: "login-87c09.firebasestorage.app",
+    messagingSenderId: "904801425260",
+    appId: "1:904801425260:web:63cad7d2ea29e949a74549"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script>
+</html>
